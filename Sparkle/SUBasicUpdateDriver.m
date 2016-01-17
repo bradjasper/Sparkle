@@ -518,7 +518,8 @@
 
 - (void)terminateApp
 {
-    [NSApp terminate:self];
+    NSLog(@"Sparkle wants to terminate application");
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"SparkleTerminateApplication" object:nil];
 }
 
 - (void)cleanUpDownload
